@@ -16,3 +16,8 @@ function draw()
 
 	em.draw();
 }
+
+function stopGame()
+{
+	frameRate(0);
+}

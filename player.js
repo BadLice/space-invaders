@@ -48,6 +48,11 @@ class Player
 
 	}
 
+	collision(x, y)
+	{
+		return (x >= this.x - this.size / 2 && x <= this.x + this.size / 2 && y >= this.y - this.size / 2 && y <= this.y + this.size / 2);
+	}
+
 	fire()
 	{
 		if (this.canShot)
@@ -56,7 +61,7 @@ class Player
 			// console.log("shot " + keyIsDown(32));
 			if (keyIsDown(32))
 			{
-				this.shots.push(new Bullet(this.x, this.y - this.size / 2));
+				this.shots.push(new Bullet(this.x, this.y - this.size / 2, true));
 			}
 			this.shotLease = millis();
 			this.canShot = false;
